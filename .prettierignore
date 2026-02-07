@@ -1,0 +1,16 @@
+# 依存関係
+node_modules
+
+# ビルド出力
+dist
+build
+.vite
+
+# キャッシュ
+.cache
+*.log
+
+# 設定ファイル
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
