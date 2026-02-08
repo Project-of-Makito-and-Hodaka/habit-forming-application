@@ -63,7 +63,10 @@ const Todo = () => {
         <div className="mx-auto max-w-6xl my-8 bg-card rounded-2xl border border-border p-8 shadow-sm">
           <div className="flex items-center justify-between mb-6 border-b border-border pb-4">
             <h2 className="text-2xl font-bold text-text-on-card">タスクの作成</h2>
-            <button onClick={() => setIsOpen(false)} className="text-text-secondary hover:text-text-primary cursor-pointer">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-text-secondary hover:text-text-primary cursor-pointer"
+            >
               <span className="text-4xl">×</span>
             </button>
           </div>
