@@ -27,23 +27,6 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
 
-      // インデントルール（2スペース統一）
-      'indent': ['error', 2, {
-        SwitchCase: 1,
-        VariableDeclarator: 1,
-        outerIIFEBody: 1,
-        MemberExpression: 1,
-        FunctionDeclaration: { parameters: 1, body: 1 },
-        FunctionExpression: { parameters: 1, body: 1 },
-        CallExpression: { arguments: 1 },
-        ArrayExpression: 1,
-        ObjectExpression: 1,
-        ImportDeclaration: 1,
-        flatTernaryExpressions: false,
-        ignoreComments: false,
-      }],
-      '@typescript-eslint/indent': 'off', // 基本のindentルールを使用
-
       // TypeScript関連ルール
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -55,7 +38,7 @@ export default tseslint.config(
       ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-non-null-assertion': 'warn',
+      '@typescript-eslint/no-non-null-assertion': 'off', // Reactのエントリーポイントなど、値の存在が保証されている場合に使用
 
       // 一般的なコード品質ルール
       'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -63,13 +46,6 @@ export default tseslint.config(
       'no-unused-vars': 'off', // TypeScriptのルールを使用
       'prefer-const': 'error',
       'no-var': 'error',
-
-      // コードスタイルの統一
-      'quotes': ['error', 'single', { avoidEscape: true }],
-      'semi': ['error', 'never'],
-      'comma-dangle': ['error', 'always-multiline'],
-      'object-curly-spacing': ['error', 'always'],
-      'array-bracket-spacing': ['error', 'never'],
     },
   },
 )
