@@ -1,11 +1,37 @@
-import Todo from './components/todo/Todo'
-import { BrowserRouter } from "react-router"
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged, User } from 'firebase/auth';
+import { auth } from './firebase'
+import Todo from './components/todo/Todo';
+import { BrowserRouter } from "react-router";
+import Logout from './components/auth/Logout'
+import Signin from './components/auth/Signin'
 
 function App() {
 
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+
   return (
     <BrowserRouter>
-      <Todo />
+      <div>
+        {user ? (
+          <>
+            <Logout />
+            <Todo />
+          </>
+        ) : (
+          <>
+            <Signin />
+          </>
+        )}
+      </div>
     </BrowserRouter>
   )
 }
