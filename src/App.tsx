@@ -3,8 +3,9 @@ import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth } from './firebase'
 import Todo from './components/todo/Todo';
 import { BrowserRouter } from "react-router";
-import Logout from './components/auth/Logout'
-import Signin from './components/auth/Signin'
+import Logout from './components/auth/Logout';
+import Signin from './components/auth/Signin';
+import Index from './pages/Index';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         {user ? (
           <>
             <Logout />
-            <Todo />
+            <Index />
           </>
         ) : (
           <>
